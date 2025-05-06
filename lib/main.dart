@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Habit X',
       theme: ThemeData(
+        
        useMaterial3: true,
         colorScheme: ColorScheme.dark(
           primary: Color(0xffA7D7C5),
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           surface: Colors.grey[800]!,
         ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Page'),
     );
   }
 }
