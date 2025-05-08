@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habit_x/screens/onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,19 +12,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Habit X',
       theme: ThemeData(
-        
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xff323843),
+          foregroundColor: Color(0xffCBE857),
+        ),
+      scaffoldBackgroundColor: Color(0xff323843),
        useMaterial3: true,
         colorScheme: ColorScheme.dark(
-          primary: Color(0xffA7D7C5),
+          primary: Color(0xffCBE857),
           secondary: Color(0xffF4E285),
           tertiary: Colors.red,
           background: Colors.black,
           surface: Colors.grey[800]!,
         ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Page'),
+      home: const OnboardingPage(),
     );
   }
 }
