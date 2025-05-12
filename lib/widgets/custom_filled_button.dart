@@ -19,7 +19,7 @@ class CustomFilledButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         padding: const EdgeInsets.symmetric(
-          vertical: 15,
+          vertical: 5,
           horizontal: 20,
         ),
       ),
@@ -28,7 +28,7 @@ class CustomFilledButton extends StatelessWidget {
         text,
         style: AppTextThemes.bodyMedium.copyWith(
           color: Colors.black,
-          fontSize: 16,
+          fontSize: 14,
           fontWeight: FontWeight.w600,
         ),
       ),

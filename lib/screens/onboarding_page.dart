@@ -177,19 +177,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
     );
   }
 
-  Row rowWithData({required String text}) {
-    return Row(
-        children: [
-          Container(color: Colors.white, height: 60, width: 60, margin: EdgeInsets.all(20),),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 16,
-              color: Theme.of(context).colorScheme.primary,
+   rowWithData({required String text}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20,),
+      child: Row(
+          children: [
+           // Container(color: Colors.white, height: 60, width: 60, margin: EdgeInsets.all(20),),
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: 16,
+                color: Theme.of(context).colorScheme.primary,
+              ),
             ),
-          ),
-        ],
-      );
+          ],
+        ),
+    );
   }
 
   headerTextStyle(context) => TextStyle(

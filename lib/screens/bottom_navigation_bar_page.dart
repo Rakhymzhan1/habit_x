@@ -73,9 +73,11 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Colors.white,
+
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     _bottomNavBarItem('lib/assets/goals.png', () {
                       setState(() {
@@ -115,7 +117,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   _bottomNavBarItem(String image, VoidCallback? onTap) {
     return InkWell(
       onTap: onTap,
-      child: SizedBox(width: 80, child: Image.asset(image)),
+      child: SizedBox(child: Image.asset(image)),
     );
   }
 }

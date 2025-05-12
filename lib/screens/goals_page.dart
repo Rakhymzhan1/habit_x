@@ -25,12 +25,19 @@ class _GoalsPageState extends State<GoalsPage> {
   final endDateController = TextEditingController(text: '13/05/2025');
   final goalsCubit = GoalsCubit();
 
-  Future<void> _onAddButtonPressed() async {
+  Future<void> _onAddButtonPressed(BuildContext context) async {
+    if (context.mounted) {
+      Navigator.pop(context);
+    }
     await goalsCubit.addGoal(
       title: goalController.text,
       startDate: startDateController.text,
       endDate: endDateController.text,
     );
+
+    goalController.clear();
+    startDateController.clear();
+    endDateController.clear();
   }
 
   void onEdit(String id) {}
@@ -103,7 +110,7 @@ class _GoalsPageState extends State<GoalsPage> {
                     goal: goal,
                     onDelete: () async => onDelete(goal.id),
                     onEdit: () async => onEdit(goal.id),
-                    onTap: ()=> onGoalItemTap(goal),
+                    onTap: () => onGoalItemTap(goal),
                   );
                 },
               );
@@ -120,8 +127,8 @@ class _GoalsPageState extends State<GoalsPage> {
   }
 
   void showCustomBottomSheet() {
-    showModalBottomSheet(
-      isScrollControlled: true,
+    showBottomSheet(
+      showDragHandle: true,
       enableDrag: true,
       backgroundColor: Color(0xff232323),
       context: context,
@@ -155,7 +162,9 @@ class _GoalsPageState extends State<GoalsPage> {
                 width: double.infinity,
                 child: CustomFilledButton(
                   text: 'Add',
-                  onPressed: () async => _onAddButtonPressed(),
+                  onPressed: () async {
+                    return _onAddButtonPressed(context);
+                  },
                 ),
               ),
             ],
@@ -165,4 +174,3 @@ class _GoalsPageState extends State<GoalsPage> {
     );
   }
 }
-
